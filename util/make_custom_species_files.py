@@ -15,7 +15,7 @@ gene_outfile="%s_genes.bed"%(args.species)
 exon_outfile="%s_exons.bed"%(args.species)
 gtf_outfile="%s.AS.STRUCTURE.COMPILED.gff"%(args.species)
 
-df = gtfparse.read_gtf(args.gtf)
+df = gtfparse.read_gtf(args.gtf, result_type="pandas")
 seqnames = df.seqname.unique()
 bigdict = dict()
 if debug==1: print("list of genes=",list(df.gene_id.unique()))
